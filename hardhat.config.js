@@ -1,19 +1,20 @@
+require("dotenv").config();
 require("@nomicfoundation/hardhat-toolbox");
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
   networks: {
     hardhat: {},
-    polygon: {
+    mumbai: {
       url: process.env.INFURA_ENDPOINT,
-      accounts: [`0x${process.env.pk3}`]
-    }
+      accounts: [process.env.PRIVATE_KEY],
+    },
   },
   solidity: {
     compilers: [
       {
-        version: "0.8.9"
-      }
-    ]
-  }
+        version: "0.8.9",
+      },
+    ],
+  },
 };
